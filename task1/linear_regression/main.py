@@ -4,10 +4,13 @@ import matplotlib.pyplot as plot
 
 def main():
     # path to file 
-    INPUT_FILE_PATH = 'input.txt'
+    INPUT_FILE_PATH = '/homework/stochastic-course/task1/input.txt'
+    #INPUT_FILE_PATH = 'input.txt'
 
     # output file path
-    RESULT_PATH = 'result.pdf'
+    RESULT_PATH = '/homework/stochastic-course/task1/result.pdf'
+    #RESULT_PATH = 'result.pdf'
+
 
     data = np.loadtxt(INPUT_FILE_PATH, delimiter='\t\t', skiprows=1)
 
