@@ -46,8 +46,8 @@ git clone https://github.com/petr-shumilov/stochastic-course.git
 cp stochastic-course
 
 # for ex. if you wanna task1 
-cd task1/linear_regression
-python3.6 main.py 
+cd task1
+python3.6 linear_regression/main.py 
 ```
 
 
