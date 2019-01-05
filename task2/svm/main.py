@@ -69,8 +69,12 @@ def get_best_model(config, data):
 def main():
 
     # path to file 
-    INPUT_FILE_PATH = 'input.txt'
-    RESULT_DIR = 'results'
+    INPUT_FILE_PATH = '/homework/stochastic-course/task2/input.txt'
+    # INPUT_FILE_PATH = 'input.txt'
+    
+    RESULT_DIR = '/homework/stochastic-course/task2/results'
+    # RESULT_DIR = 'results'
+
 
     # config 
     config = [{

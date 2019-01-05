@@ -33,8 +33,11 @@ def k_means(points, k, iterations):
 
 
 def main():
-    INPUT_DIR = 'data' 
-    RESULT_DIR = 'results'
+    INPUT_DIR = '/homework/stochastic-course/task3/data' 
+    # INPUT_DIR = 'data' 
+    
+    RESULT_DIR = '/homework/stochastic-course/task3/results'
+    # RESULT_DIR = 'results'
 
     NUM_OF_CLUSTERS = [3, 5, 8]
     NUM_OF_ITERATIONS = 300

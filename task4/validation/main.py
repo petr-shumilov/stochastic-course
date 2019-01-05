@@ -114,8 +114,12 @@ def outer_criterias(X, k_range, reference, iterations=300):
     return RS, best_rs, FM, best_fm
 
 def main():
-    INPUT_DIR = 'data' 
-    RESULTS_DIR = 'results'
+    INPUT_DIR = '/homework/stochastic-course/task4/data' 
+    # INPUT_DIR = 'data' 
+    
+    RESULTS_DIR = '/homework/stochastic-course/task4/results'
+    # RESULTS_DIR = 'results'
+    
     CLUSTERS_RANGE = range(2, 10)
     IMG_URL = os.path.join(INPUT_DIR, 'policemen.jpg')
     DATA_URL = os.path.join(INPUT_DIR, 'input.txt')
