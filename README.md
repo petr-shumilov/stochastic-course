@@ -7,7 +7,7 @@
 
 Code of each tasks located in `~/task${N}/${PACKAGE_NAME}/main.py` where `PACKAGE_NAME` package name for each task accordingly
 ## How to start
-My apps are supportoing two methods of reliable checking -- downloading and running `Docker` image (recommended) or manual performing the scripts (you must have all dependencies).
+My work are supporting two methods of checking -- downloading Docker image (recommended) or manual performing the scripts (you must have installed all dependencies).
 ### Docker
 For this case you need have only `Docker`. Copy this line to bash-like tty and press enter for downloading and building tasks:
 ```bash
@@ -38,7 +38,16 @@ _WARNING:_  you must have following Python-packages
 * Pillow
 * Sklearn 
 
-and you need fix input and output paths.  
+and you need fix input and output paths in code:
+```python
+# for Docker 
+INPUT_FILE_PATH = '/homework/stochastic-course/task1/input.txt'
+#INPUT_FILE_PATH = 'input.txt'
+
+# for manual
+#INPUT_FILE_PATH = '/homework/stochastic-course/task1/input.txt'
+INPUT_FILE_PATH = 'input.txt'
+```
 Go to the specific directory and run the corresponding script:
 ```bash
 # downloading the sources 
@@ -49,5 +58,3 @@ cp stochastic-course
 cd task1
 python3.6 linear_regression/main.py 
 ```
-
-
