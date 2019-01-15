@@ -4,7 +4,7 @@ import os
 
 from PIL import Image
 
-def k_means(data, clusters_num, max_iteration):
+def k_means(data, clusters_num, max_iterations=20):
 
     def distance(x, y, axis=None): 
         return np.linalg.norm(x - y, axis=axis)
@@ -14,11 +14,11 @@ def k_means(data, clusters_num, max_iteration):
     random_subset_indicies = np.random.randint(low=0, high=data_size, size=clusters_num)
     cluster_centers = data[random_subset_indicies, :]
     cluster_by_item = np.zeros(data_size)
-    new_cluster_centers = np.zeros((clusters_num, 3))
+    new_cluster_centers = np.zeros(cluster_centers.shape)
              
-    still_changed = True
+    still_change = True
     iteration = 0
-    while iteration < max_iteration and still_changed:
+    while still_change:
         norms = np.zeros((data_size, clusters_num))
         for cluster in range(clusters_num):
             norms[:, cluster] = distance(data, cluster_centers[cluster], axis=1)
@@ -27,13 +27,14 @@ def k_means(data, clusters_num, max_iteration):
         
         for cluster in range(clusters_num):
             cluster_items = [data[item] for item, _cluster in enumerate(cluster_by_item) if cluster == _cluster]
-            if cluster_items:
-                new_cluster_centers[cluster] = np.mean(cluster_items, axis=0)
-
-        still_changed = distance(cluster_centers, new_cluster_centers) != 0
-        cluster_centers = new_cluster_centers
+            new_cluster_centers[cluster] = np.mean(cluster_items, axis=0)
+            
+        still_change = distance(cluster_centers, new_cluster_centers) != 0
+        cluster_centers = deepcopy(new_cluster_centers)
+        if iteration > max_iterations:
+            break
         iteration += 1
-        
+
     return cluster_centers, cluster_by_item
 
 
